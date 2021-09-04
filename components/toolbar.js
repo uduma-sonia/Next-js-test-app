@@ -10,6 +10,7 @@ export const Toolbar = () => {
       <div onClick={() => router.push("/feed/1")}>Feed</div>
       <div onClick={() => router.push("/eom")}>EOM</div>
       <div onClick={() => router.push("/rickmorty")}>Rick & Morty</div>
+      <div onClick={() => router.push("/chart")}>Chart</div>
     </div>
   );
 };

@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
-import { Toolbar } from "../components/toolbar";
-import { fetchPost } from "../store/actions/postAction";
+import { Toolbar } from "../../components/toolbar";
+import { fetchPost } from "../../store/actions/postAction";
 import { useSelector, useDispatch } from "react-redux";
 
 export const Rickmorty = () => {
   const dispatch = useDispatch();
   const getData = useSelector((state) => state.postReducer);
   const [result, setResult] = useState([]);
-
-  // setResult(getData);
 
   useEffect(() => {
     dispatch(fetchPost());
@@ -20,17 +18,16 @@ export const Rickmorty = () => {
     }
   }, [getData]);
 
-  console.log(result);
   return (
     <div className="container mx-auto px-20">
       <Toolbar />
       <div className="my-10">
         <h1 className="text-4xl text-center font-bold text-gray-800">
-          RICK AND MORTY DATA PAGE
+          RICK AND MORTY CHARACTERS
         </h1>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {result &&
           result.map((item, index) => (
             <div
@@ -38,7 +35,7 @@ export const Rickmorty = () => {
               className="border border-gray-400 rounded flex bg-gray-700 text-gray-200"
             >
               <div>
-                <img src={item.image} className="h-44" />
+                <img src={item.image} className="h-48" />
               </div>
 
               <div className="ml-5">
