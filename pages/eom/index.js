@@ -1,5 +1,6 @@
 import styles from "../../styles/EOM.module.css";
 import { Toolbar } from "../../components/toolbar";
+import Button from "../../components/button";
 
 export const EOM = ({ employee }) => {
   console.log(employee);
@@ -16,6 +17,18 @@ export const EOM = ({ employee }) => {
           <img src={employee.image} />
           <p>{employee.description}</p>
         </div>
+
+        <Button
+          height={35}
+          title="SUBMIT BUTTON"
+          color="#111111"
+          mt={10}
+          mb={10}
+          br={8}
+          pd={20}
+          main
+          height={50}
+        />
       </div>
     </div>
   );
